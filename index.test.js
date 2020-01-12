@@ -1,49 +1,77 @@
-const {sum,subtract,verifyInput, isDivideByTwo, isDivisible, divideByTwo, getLcm, findlcd} = require('./index')
+const { findRemainder, findGCD, swap, sortMax, findLCM } = require('./index')
 
-test('adds 1 + 2 to equal 3', () => {
-  expect(sum(1, 2)).toBe(3);
-});
-
-test('minus 3 - 2 to equal 1', () => {
-  expect(subtract(3, 2)).toBe(1);
-});
-
-test('x or y to be numbers',()=>{
-  expect(verifyInput('a','b')).toBe(false)
+test('finds remainder of 4 divided by 2 to be 0', () => {
+  expect(findRemainder(4, 2)).toBe(0)
 })
 
-test('is the 20 as argument divisible by 2',()=>{
-  expect(isDivideByTwo(20)).toBe(true)
-})
-test('is the 19 as argument divisible by 2',()=>{
-  expect(isDivideByTwo(19)).toBe(false)
+test('finds remainder of 8 divided by 3 to be 2', () => {
+  expect(findRemainder(8, 3)).toBe(2)
 })
 
-test('return the lcm of 4, 2', ()=>{
-  expect(getLcm(4, 2)).toBe(4)
+test('finds remainder of 4 divided by 3 to be 1', () => {
+  expect(findRemainder(4, 3)).toBe(1)
 })
 
-test('return is completely divisible', () =>{
-  expect(isDivisible(4,2)).toBe(true)
+test('finds GCD of 3 and 0 to be 3', () => {
+  expect(findGCD(3, 0)).toBe(3)
 })
 
-
-test('findlcd (5, 2) is 1', () => {
-  expect(findlcd(5, 2)).toBe(1)
+test('finds GCD of 0 and 0 to be 0', () => {
+  expect(findGCD(0, 0)).toBe(0)
 })
 
-test('findlcd (20, 8) is 2', () => {
-  expect(findlcd(20, 8)).toBe(2)
+test('finds GCD of 56 and 42 to be 14', () => {
+  expect(findGCD(56, 42)).toBe(14)
 })
 
-test('findlcd(5,3) is 3', ()=> {
-  expect(findlcd(5,3)).toBe(1)
+test('finds GCD of 461952 and 116298 to be 18', () => {
+  expect(findGCD(461952, 116298)).toBe(18)
 })
 
-test('getLcm(2,2) is 2', () => {
-  expect(getLcm(2,2)).toEqual(2)
+test('finds GCD of 314080416 and 7966496 to be 32', () => {
+  expect(findGCD(314080416, 7966496)).toBe(32)
 })
 
-test('getLcm(3,8) is 24', () => {
-  expect(getLcm(3,8)).toEqual(24)
+test('finds GCD of 314080416 and 7966496 to be 32', () => {
+  expect(findGCD(314080416, 7966496)).toBe(32)
+})
+
+test('finds GCD of 45296490 and 24826148 to be 526', () => {
+  expect(findGCD(45296490, 24826148)).toBe(526)
+})
+
+test('Swap 1 and 2 to be [2, 1]', () => {
+  expect(swap(1, 2)).toEqual([2, 1])
+})
+
+test('Sorts max of 3 and 1 to be [3, 1]', () => {
+  expect(sortMax(3, 1)).toEqual([3, 1])
+})
+
+test('Sorts max of 5 and 10 to be [10, 5]', () => {
+  expect(sortMax(5, 10)).toEqual([10, 5])
+})
+
+test('Sorts max of 0 and 0 to be [0,0]', () => {
+  expect(sortMax(0, 0)).toEqual([0, 0])
+})
+
+test('LCM of 21 and 6 to be 42', () => {
+  expect(findLCM(21, 6)).toBe(42)
+})
+
+test('LCM of 4 and 12 to be 12', () => {
+  expect(findLCM(4, 12)).toBe(12)
+})
+
+test('LCM of 39 and 43 to be 1677', () => {
+  expect(findLCM(39, 43)).toBe(1677)
+})
+
+test('LCM of 1 and 20 to be 20', () => {
+  expect(findLCM(1, 20)).toBe(20)
+})
+
+test('finds LCM of 45296490 and 24826148 to be 2137903735020', () => {
+  expect(findLCM(45296490, 24826148)).toBe(2137903735020)
 })
